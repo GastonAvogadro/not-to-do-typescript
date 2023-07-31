@@ -1,4 +1,5 @@
 import { Tasks } from '../types';
+import TaskItem from './TaskItem';
 
 interface Props {
     tasks: Tasks[];
@@ -6,6 +7,12 @@ interface Props {
 }
 
 const TaskList = ({ tasks, setTasks }: Props) => {
-    return <div>TaskList</div>;
+    return (
+        <div>
+            {tasks.map((task) => {
+                return <TaskItem task={task}/>
+            })}
+        </div>
+    );
 };
 export default TaskList;

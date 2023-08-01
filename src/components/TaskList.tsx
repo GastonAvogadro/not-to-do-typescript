@@ -10,7 +10,7 @@ const TaskList = ({ tasks, setTasks }: Props) => {
     return (
         <div>
             {tasks.map((task) => {
-                return <TaskItem task={task}/>
+                return <TaskItem key={task.id} task={task} tasks={tasks} setTasks={setTasks}/>
             })}
         </div>
     );

@@ -1,12 +1,12 @@
-import { Tasks } from '../types';
+import { Tasks, SetTasks } from '../types';
 
 interface Props {
-    task: { id: number; text: string; checked: boolean };
+    task: Tasks;
     tasks: Tasks[];
-    setTasks: React.Dispatch<React.SetStateAction<Tasks[]>>;
+    setTasks: SetTasks['SetState'];
 }
 
-const TaskItem = ({ task, tasks, setTasks }: Props) => {
+const TaskItem: React.FC<Props> = ({ tasks, setTasks }) => {
     function handleCheck() {
         let result = tasks.map((element) => {
             if (element.id === task.id) {

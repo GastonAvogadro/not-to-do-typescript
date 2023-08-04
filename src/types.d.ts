@@ -3,3 +3,7 @@ export interface Tasks {
     text: string;
     checked: boolean;
 }
+
+export interface SetTasks {
+    SetState: (newTasks: Tasks[]) => void;
+}

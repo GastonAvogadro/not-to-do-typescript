@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { Tasks } from '../types';
+import { Tasks, SetTasks } from '../types';
 
 interface Props {
     tasks: Tasks[];
-    setTasks: React.Dispatch<React.SetStateAction<Tasks[]>>;
+    setTasks: SetTasks;
 }
 
-const TaskForm = ({ tasks, setTasks }: Props) => {
+const TaskForm: React.FC<Props> = ({ tasks, setTasks }) => {
+    
     const [input, setInput] = useState('');
 
     function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
@@ -23,7 +24,7 @@ const TaskForm = ({ tasks, setTasks }: Props) => {
     function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
         e.key === 'Enter' && handleSubmit;
     }
-    
+
     return (
         <form onSubmit={handleSubmit}>
             <input

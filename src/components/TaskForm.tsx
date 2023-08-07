@@ -1,39 +1,32 @@
-import { useState } from 'react';
-import { Tasks, SetTasks } from '../types';
+import { useRef } from 'react';
+import { TasksType, SetTasksType } from '../types';
 
 interface Props {
-    tasks: Tasks[];
-    setTasks: SetTasks;
+    tasks: TasksType[];
+    setTasks: SetTasksType;
 }
 
 const TaskForm: React.FC<Props> = ({ tasks, setTasks }) => {
-    
-    const [input, setInput] = useState('');
+    const inputRef = useRef<HTMLInputElement>(null);
 
     function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
-        const newTask = {
-            id: tasks.length,
-            text: input,
-            checked: false,
-        };
         evt.preventDefault();
-        setTasks((prevTasks) => [...prevTasks, newTask]);
-        console.log(tasks);
-    }
+        const inputValue = inputRef.current?.value;
 
-    function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-        e.key === 'Enter' && handleSubmit;
+        if (inputValue !== '') {
+            const newTask = {
+                id: tasks.length,
+                text: inputValue,
+                checked: false,
+            };
+            inputRef.current ? (inputRef.current.value = '') : null;
+            setTasks([...tasks, newTask]);
+        }
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Ingresar tarea"
-                autoFocus
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-            />
+            <input ref={inputRef} type="text" placeholder="Ingresar tarea" autoFocus />
             <button type="submit">+</button>
         </form>
     );

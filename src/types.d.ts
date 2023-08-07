@@ -1,9 +1,7 @@
-export interface Tasks {
+export type TasksType = {
     id: number;
     text: string;
     checked: boolean;
-}
+};
 
-export interface SetTasks {
-    SetState: (newTasks: Tasks[]) => void;
-}
+export type SetTasksType = (newTasks: Tasks[]) => void;

@@ -1,12 +1,12 @@
-import { Tasks, SetTasks } from '../types';
+import { TasksType, SetTasksType } from '../types';
 
 interface Props {
-    task: Tasks;
-    tasks: Tasks[];
-    setTasks: SetTasks['SetState'];
+    task: TasksType;
+    tasks: TasksType[];
+    setTasks: SetTasksType;
 }
 
-const TaskItem: React.FC<Props> = ({ tasks, setTasks }) => {
+const TaskItem: React.FC<Props> = ({ task, tasks, setTasks }) => {
     function handleCheck() {
         let result = tasks.map((element) => {
             if (element.id === task.id) {

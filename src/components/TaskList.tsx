@@ -1,9 +1,9 @@
-import { Tasks, SetTasks } from '../types';
+import { TasksType, SetTasksType } from '../types';
 import TaskItem from './TaskItem';
 
 interface Props {
-    tasks: Tasks[];
-    setTasks: SetTasks['SetState'];
+    tasks: TasksType[];
+    setTasks: SetTasksType;
 }
 
 const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {

@@ -7,12 +7,13 @@ interface Props {
 }
 
 const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
+    
     return (
-        <div>
+        <ul className='w-full'>
             {tasks.map((task) => {
                 return <TaskItem key={task.id} task={task} tasks={tasks} setTasks={setTasks} />;
             })}
-        </div>
+        </ul>
     );
 };
 export default TaskList;

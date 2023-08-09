@@ -1,4 +1,5 @@
 import { TasksType, SetTasksType } from '../types';
+import { ReactComponent as TrashCan } from '../assets/trashCan.svg';
 
 interface Props {
     task: TasksType;
@@ -25,11 +26,16 @@ const TaskItem: React.FC<Props> = ({ task, tasks, setTasks }) => {
     }
 
     return (
-        <div>
-            <button onClick={handleCheck}>✔</button>
+        <li className="flex">
+            <button onClick={handleCheck} className={`w-[25px] h-[25px] bg-white rounded-md border border-black`}>
+                {task.checked ? <span>✔</span> : null}
+            </button>
             <p className={task.checked ? 'line-through' : undefined}>{task.text}</p>
-            <button onClick={handleRemove}>Eliminar</button>
-        </div>
+            <TrashCan
+                onClick={handleRemove}
+                className="w-[30px] h-[30px] cursor-pointer hover:scale-110 transition-transform"
+            />
+        </li>
     );
 };
 export default TaskItem;

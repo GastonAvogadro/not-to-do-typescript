@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { TasksType, SetTasksType } from '../types';
+import { ReactComponent as AddCircle } from '../assets/addCircle.svg';
 
 interface Props {
     tasks: TasksType[];
@@ -15,7 +16,7 @@ const TaskForm: React.FC<Props> = ({ tasks, setTasks }) => {
 
         if (inputValue !== '') {
             const newTask = {
-                id: tasks.length,
+                id: Date.now(),
                 text: inputValue,
                 checked: false,
             };
@@ -25,9 +26,18 @@ const TaskForm: React.FC<Props> = ({ tasks, setTasks }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input ref={inputRef} type="text" placeholder="Ingresar tarea" autoFocus />
-            <button type="submit">+</button>
+        <form onSubmit={handleSubmit} className="flex gap-2 w-full">
+            <input
+                ref={inputRef}
+                className="py-2 px-4 rounded-md w-full"
+                type="text"
+                placeholder="Ingresar tarea"
+                autoFocus
+            />
+
+            <button type="submit">
+                <AddCircle className="hover:scale-110 transition-transform" />
+            </button>
         </form>
     );
 };

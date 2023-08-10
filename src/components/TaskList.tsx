@@ -1,15 +1,11 @@
-import { TasksType, SetTasksType } from '../types';
+import { useAppContext } from '../context/AppContext';
 import TaskItem from './TaskItem';
 
-interface Props {
-    tasks: TasksType[];
-    setTasks: SetTasksType;
-}
+const TaskList: React.FC = () => {
+    const { tasks, setTasks } = useAppContext();
 
-const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
-    
     return (
-        <ul className='w-full'>
+        <ul className="w-full">
             {tasks.map((task) => {
                 return <TaskItem key={task.id} task={task} tasks={tasks} setTasks={setTasks} />;
             })}

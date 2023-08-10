@@ -1,13 +1,9 @@
 import { useRef } from 'react';
-import { TasksType, SetTasksType } from '../types';
+import { useAppContext } from '../context/AppContext';
 import { ReactComponent as AddCircle } from '../assets/addCircle.svg';
 
-interface Props {
-    tasks: TasksType[];
-    setTasks: SetTasksType;
-}
-
-const TaskForm: React.FC<Props> = ({ tasks, setTasks }) => {
+const TaskForm: React.FC = () => {
+    const { tasks, setTasks } = useAppContext();
     const inputRef = useRef<HTMLInputElement>(null);
 
     function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {

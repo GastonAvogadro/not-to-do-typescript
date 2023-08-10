@@ -27,7 +27,10 @@ const TaskItem: React.FC<Props> = ({ task, tasks, setTasks }) => {
 
     return (
         <li className="flex">
-            <button onClick={handleCheck} className={`w-[25px] h-[25px] bg-white rounded-md border border-black`}>
+            <button
+                onClick={handleCheck}
+                className={`w-[25px] h-[25px] bg-white rounded-md border border-black`}
+            >
                 {task.checked ? <span>✔</span> : null}
             </button>
             <p className={task.checked ? 'line-through' : undefined}>{task.text}</p>

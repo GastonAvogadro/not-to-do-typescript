@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-type Theme = 'light' | 'dark';
+export type ThemeType = 'light' | 'dark';
+export type ThemeToggleType = () => void;
 
-const useThemeToggle = (): [Theme, () => void] => {
-    const detectPreferredTheme = (): Theme => {
-        const savedTheme = localStorage.getItem('theme') as Theme | null;
+export const useThemeToggle = (): [ThemeType, ThemeToggleType] => {
+    const detectPreferredTheme = (): ThemeType => {
+        const savedTheme = localStorage.getItem('theme') as ThemeType | null;
         if (savedTheme) {
             savedTheme === 'dark' ? document.body.classList.add('darkTheme') : null;
             return savedTheme;
@@ -20,7 +21,7 @@ const useThemeToggle = (): [Theme, () => void] => {
         }
     };
 
-    const [theme, setTheme] = useState<Theme>(detectPreferredTheme());
+    const [theme, setTheme] = useState<ThemeType>(detectPreferredTheme());
 
     const toggleTheme = (): void => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -33,5 +34,3 @@ const useThemeToggle = (): [Theme, () => void] => {
 
     return [theme, toggleTheme];
 };
-
-export default useThemeToggle;

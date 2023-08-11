@@ -29,6 +29,7 @@ const TaskForm: React.FC = () => {
                 type="text"
                 placeholder="Ingresar tarea"
                 autoFocus
+                maxLength={50}
             />
 
             <button type="submit">

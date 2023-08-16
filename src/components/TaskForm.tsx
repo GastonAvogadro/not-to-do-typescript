@@ -25,7 +25,7 @@ const TaskForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="flex gap-2 w-full">
             <input
                 ref={inputRef}
-                className="py-2 px-4 rounded-md w-full"
+                className="py-2 px-4 rounded-md w-full ml-[2px]"
                 type="text"
                 placeholder="Ingresar tarea"
                 autoFocus

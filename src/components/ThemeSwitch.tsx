@@ -1,9 +1,13 @@
-import React from 'react';
+import { useAppContext } from '../context/AppContext';
 
-const ThemeSwitch = () => {
+const ThemeSwitch: React.FC = () => {
+    const { theme, toggleTheme } = useAppContext();
+
+    const handleCheck = () => (theme === 'light' ? false : true);
+
     return (
         <label id="theme-toggle-button">
-            <input type="checkbox" id="toggle" />
+            <input type="checkbox" id="toggle" onChange={toggleTheme} checked={handleCheck()} />
             <svg
                 viewBox="0 0 69.667 44"
                 xmlnsXlink="http://www.w3.org/1999/xlink"

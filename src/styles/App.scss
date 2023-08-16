@@ -10,7 +10,7 @@
         #root {
             @apply w-[600px] max-w-[96%] overflow-hidden;
             .themeIcon {
-                path {
+                path, rect, line {
                     @apply stroke-lightPrimary;
                 }
             }
@@ -21,7 +21,7 @@
         color: #f8f8f8;
         #root {
             .themeIcon {
-                path {
+                path, rect, line {
                     @apply stroke-darkPrimary;
                 }
             }

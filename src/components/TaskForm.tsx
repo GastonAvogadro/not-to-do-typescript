@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { ReactComponent as AddCircle } from '../assets/addCircle.svg';
+import { ReactComponent as AddItem } from '../assets/addItem.svg';
 
 const TaskForm: React.FC = () => {
     const { tasks, setTasks } = useAppContext();
@@ -33,7 +33,7 @@ const TaskForm: React.FC = () => {
             />
 
             <button type="submit">
-                <AddCircle className="themeIcon hover:scale-110 transition-transform" />
+                <AddItem className="themeIcon hover:scale-110 transition-transform" />
             </button>
         </form>
     );

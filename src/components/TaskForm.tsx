@@ -33,7 +33,7 @@ const TaskForm: React.FC = () => {
             />
 
             <button type="submit">
-                <AddCircle className="hover:scale-110 transition-transform" />
+                <AddCircle className="themeIcon hover:scale-110 transition-transform" />
             </button>
         </form>
     );

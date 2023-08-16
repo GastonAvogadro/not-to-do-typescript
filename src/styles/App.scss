@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './themeSwitch.scss';
+
 @layer base {
     body {
         @apply flex flex-col items-center font-[Roboto] pt-10 min-h-screen bg-[#f1f1f1];
         #root {
             @apply w-[600px] max-w-[96%] overflow-hidden;
-            path {
-                @apply stroke-lightPrimary;
+            .themeIcon {
+                path {
+                    @apply stroke-lightPrimary;
+                }
             }
         }
     }
@@ -16,8 +20,10 @@
         background-color: rgb(15, 15, 15);
         color: #f8f8f8;
         #root {
-            path {
-                @apply stroke-darkPrimary;
+            .themeIcon {
+                path {
+                    @apply stroke-darkPrimary;
+                }
             }
         }
     }

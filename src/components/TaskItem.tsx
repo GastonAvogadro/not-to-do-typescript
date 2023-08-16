@@ -50,7 +50,7 @@ const TaskItem: React.FC<Props> = ({ task, tasks, setTasks }) => {
             </div>
             <TrashCan
                 onClick={handleRemove}
-                className="w-[30px] h-[30px] cursor-pointer relative right-0 hover:scale-110 transition-transform"
+                className="themeIcon w-[30px] h-[30px] cursor-pointer relative right-0 hover:scale-110 transition-transform"
             />
         </li>
     );

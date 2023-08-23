@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+# Sitio web Michipedia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![not-to-do-app](http://imgfz.com/i/pS6IhzQ.jpeg)
 
-Currently, two official plugins are available:
+Sitio web desarrollado para poder hacer una lista de tareas para no hacer, persiste la información en el navegador para conservadas las tareas ingresadas y sus estados.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Link al sitio
+### https://not-to-do-typescript.vercel.app/
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Instalación y ejecución
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```sh
+npm install
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Tech: 
+
+- React
+- Typescript
+- Tailwind

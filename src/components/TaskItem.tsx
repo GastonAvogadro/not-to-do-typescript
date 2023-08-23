@@ -46,7 +46,7 @@ const TaskItem: React.FC<Props> = ({ task, tasks, setTasks }) => {
                 <button className={`w-[25px] h-[25px] rounded-md border ${handleCheckClass()}`}>
                     {task.checked ? <span className="text-white">✔</span> : null}
                 </button>
-                <p className={`cursor-pointer ${task.checked ? 'line-through' : ''}`}>{task.text}</p>
+                <p className={`cursor-pointer break-all text-[0.8rem] sm:text-[1rem] ${task.checked ? 'line-through' : ''}`}>{task.text}</p>
             </div>
             <TrashCan
                 onClick={handleRemove}
